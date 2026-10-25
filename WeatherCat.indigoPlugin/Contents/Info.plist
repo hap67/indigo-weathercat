@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>WeatherCat</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.5th-imperium.weathercat</string>
+	<key>CFBundleVersion</key>
+	<string>0.3.0</string>
+	<key>PluginVersion</key>
+	<string>0.3.0</string>
+	<key>ServerApiVersion</key>
+	<string>3.4</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>https://github.com/hap67/indigo-weathercat</string>
+		</dict>
+	</array>
+</dict>
+</plist>

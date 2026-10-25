@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>result</key>
+        <dict>
+	<key>RCPVersion</key>
+	<integer>100</integer>
+	<key>build</key>
+	<integer>20</integer>
+	<key>camera1CapturePeriod</key>
+	<integer>30</integer>
+	<key>samplePeriod</key>
+	<integer>120</integer>
+	<key>stationBadCommsCount</key>
+	<integer>423</integer>
+	<key>stationCommsStatus</key>
+	<true/>
+	<key>stationGoodCommsCount</key>
+	<integer>365524</integer>
+	<key>stationName</key>
+	<string>My Station</string>
+	<key>stationSensorErrorCount</key>
+	<integer>0</integer>
+	<key>uptime</key>
+	<integer>522793</integer>
+	<key>versString</key>
+	<string>WeatherCat V3.33  Build 20. 12:05:49 Dec 21 2025</string>
+	<key>version</key>
+	<integer>333</integer>
+</dict>
+
+        <key>error</key>
+        <integer>0</integer>
+        <key>errorDescription</key>
+        <string>OK</string>
+        <key>serverTime</key>
+        <string>2026-10-25 09:58:05 +0000</string>
+        <key>processTime</key>
+        <string>0.00295508</string>
+    </dict>
+</plist>

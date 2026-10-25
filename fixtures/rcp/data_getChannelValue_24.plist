@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>result</key>
+        <real>0.0000</real>
+        <key>error</key>
+        <integer>0</integer>
+        <key>errorDescription</key>
+        <string>OK</string>
+        <key>serverTime</key>
+        <string>2026-10-25 09:58:05 +0000</string>
+        <key>processTime</key>
+        <string>0.00001311</string>
+    </dict>
+</plist>

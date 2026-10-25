@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<MenuItems>
+	<MenuItem id="createDevices">
+		<Name>Create Devices for All Live Readings</Name>
+		<CallbackMethod>menu_create_devices</CallbackMethod>
+	</MenuItem>
+	<MenuItem id="logChannels">
+		<Name>Log WeatherCat Channels</Name>
+		<CallbackMethod>menu_log_channels</CallbackMethod>
+	</MenuItem>
+	<MenuItem id="refreshNow">
+		<Name>Refresh Now</Name>
+		<CallbackMethod>menu_refresh_now</CallbackMethod>
+	</MenuItem>
+</MenuItems>

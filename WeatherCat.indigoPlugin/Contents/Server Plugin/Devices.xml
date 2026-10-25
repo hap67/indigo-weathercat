@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!-- Reading devices get extra states (today's high/low, compass point) from getDeviceStateList in
+     plugin.py, depending on the channel they read. -->
+<Devices>
+	<Device type="sensor" id="wcReading">
+		<Name>WeatherCat Reading</Name>
+		<ConfigUI>
+			<Field id="SupportsOnState" type="checkbox" defaultValue="false" hidden="true"/>
+			<Field id="SupportsSensorValue" type="checkbox" defaultValue="true" hidden="true"/>
+			<Field id="SupportsStatusRequest" type="checkbox" defaultValue="true" hidden="true"/>
+			<Field id="channelKey" type="menu">
+				<Label>Reading:</Label>
+				<List class="self" method="channel_menu" dynamicReload="true"/>
+			</Field>
+			<Field id="channelNote" type="label" fontSize="small" fontColor="darkgray">
+				<Label>Readings marked "no data" aren't fitted or aren't reporting on your station.</Label>
+			</Field>
+			<Field id="showStats" type="checkbox" defaultValue="true">
+				<Label>Today's high and low:</Label>
+				<Description>Add high, low and 1-hour change states (where WeatherCat keeps them)</Description>
+			</Field>
+			<Field id="decimals" type="menu" defaultValue="">
+				<Label>Decimal places:</Label>
+				<List>
+					<Option value="">Usual for this reading</Option>
+					<Option value="0">0 (e.g. 52)</Option>
+					<Option value="1">1 (e.g. 52.4)</Option>
+					<Option value="2">2 (e.g. 52.43)</Option>
+					<Option value="3">3 (e.g. 52.431)</Option>
+					<Option value="4">4 (e.g. 52.4310)</Option>
+				</List>
+			</Field>
+			<Field id="decimalsNote" type="label" fontSize="small" fontColor="darkgray">
+				<Label>Usual: temperature 1, pressure 2 (inHg) or 1 (hPa), wind 1, rain 2 (in) or 1 (mm), humidity and direction 0.</Label>
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="channelName">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WeatherCat channel name</TriggerLabel>
+				<ControlPageLabel>WeatherCat channel name</ControlPageLabel>
+			</State>
+			<State id="units">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Units</TriggerLabel>
+				<ControlPageLabel>Units</ControlPageLabel>
+			</State>
+			<State id="hasData">
+				<ValueType boolType="YesNo">Boolean</ValueType>
+				<TriggerLabel>Station is reporting this reading</TriggerLabel>
+				<ControlPageLabel>Station is reporting this reading</ControlPageLabel>
+			</State>
+		</States>
+	</Device>
+
+	<Device type="custom" id="wcStation">
+		<Name>WeatherCat Station</Name>
+		<ConfigUI>
+			<Field id="SupportsStatusRequest" type="checkbox" defaultValue="true" hidden="true"/>
+			<Field id="stationNote" type="label">
+				<Label>Shows WeatherCat's status, current conditions, forecast, sun times and alerts. One is enough.</Label>
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="status">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Status</TriggerLabel>
+				<ControlPageLabel>Status</ControlPageLabel>
+			</State>
+			<State id="online">
+				<ValueType boolType="YesNo">Boolean</ValueType>
+				<TriggerLabel>WeatherCat is answering</TriggerLabel>
+				<ControlPageLabel>WeatherCat is answering</ControlPageLabel>
+			</State>
+			<State id="stationComms">
+				<ValueType boolType="YesNo">Boolean</ValueType>
+				<TriggerLabel>Station comms OK</TriggerLabel>
+				<ControlPageLabel>Station comms OK</ControlPageLabel>
+			</State>
+			<State id="conditions">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Current conditions</TriggerLabel>
+				<ControlPageLabel>Current conditions</ControlPageLabel>
+			</State>
+			<State id="forecast">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Forecast</TriggerLabel>
+				<ControlPageLabel>Forecast</ControlPageLabel>
+			</State>
+			<State id="shortForecast">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Short forecast</TriggerLabel>
+				<ControlPageLabel>Short forecast</ControlPageLabel>
+			</State>
+			<State id="pressureTrend">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Pressure trend</TriggerLabel>
+				<ControlPageLabel>Pressure trend</ControlPageLabel>
+			</State>
+			<State id="dominantWind">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Dominant wind direction today</TriggerLabel>
+				<ControlPageLabel>Dominant wind direction today</ControlPageLabel>
+			</State>
+			<State id="sunrise">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Sunrise</TriggerLabel>
+				<ControlPageLabel>Sunrise</ControlPageLabel>
+			</State>
+			<State id="sunset">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Sunset</TriggerLabel>
+				<ControlPageLabel>Sunset</ControlPageLabel>
+			</State>
+			<State id="daylight">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Daylight today</TriggerLabel>
+				<ControlPageLabel>Daylight today</ControlPageLabel>
+			</State>
+			<State id="lastSample">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Last sample</TriggerLabel>
+				<ControlPageLabel>Last sample</ControlPageLabel>
+			</State>
+			<State id="alertsTriggered">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Triggered alerts</TriggerLabel>
+				<ControlPageLabel>Triggered alerts</ControlPageLabel>
+			</State>
+			<State id="alertsTriggeredCount">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Number of triggered alerts</TriggerLabel>
+				<ControlPageLabel>Number of triggered alerts</ControlPageLabel>
+			</State>
+			<State id="goodPackets">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Good packets from station</TriggerLabel>
+				<ControlPageLabel>Good packets from station</ControlPageLabel>
+			</State>
+			<State id="badPackets">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Bad packets from station</TriggerLabel>
+				<ControlPageLabel>Bad packets from station</ControlPageLabel>
+			</State>
+			<State id="sensorErrors">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Sensor errors</TriggerLabel>
+				<ControlPageLabel>Sensor errors</ControlPageLabel>
+			</State>
+			<State id="uptimeHours">
+				<ValueType>Number</ValueType>
+				<TriggerLabel>WeatherCat uptime (hours)</TriggerLabel>
+				<ControlPageLabel>WeatherCat uptime (hours)</ControlPageLabel>
+			</State>
+			<State id="samplePeriod">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>Sample period (seconds)</TriggerLabel>
+				<ControlPageLabel>Sample period (seconds)</ControlPageLabel>
+			</State>
+			<State id="stationName">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Station name</TriggerLabel>
+				<ControlPageLabel>Station name</ControlPageLabel>
+			</State>
+			<State id="weathercatVersion">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WeatherCat version</TriggerLabel>
+				<ControlPageLabel>WeatherCat version</ControlPageLabel>
+			</State>
+			<State id="rcpVersion">
+				<ValueType>Integer</ValueType>
+				<TriggerLabel>RCP version</TriggerLabel>
+				<ControlPageLabel>RCP version</ControlPageLabel>
+			</State>
+			<State id="units">
+				<ValueType>String</ValueType>
+				<TriggerLabel>WeatherCat units</TriggerLabel>
+				<ControlPageLabel>WeatherCat units</ControlPageLabel>
+			</State>
+		</States>
+		<UiDisplayStateId>status</UiDisplayStateId>
+	</Device>
+</Devices>

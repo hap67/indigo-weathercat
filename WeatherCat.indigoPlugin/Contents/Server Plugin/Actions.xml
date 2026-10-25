@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Actions>
+	<Action id="refreshNow">
+		<Name>Refresh All WeatherCat Devices Now</Name>
+		<CallbackMethod>action_refresh_now</CallbackMethod>
+	</Action>
+	<Action id="tagToVariable">
+		<Name>Put a WeatherCat Tag Into a Variable</Name>
+		<CallbackMethod>action_tag_to_variable</CallbackMethod>
+		<ConfigUI>
+			<Field id="tag" type="textfield" defaultValue="STAT$TEMPERATURE:MAX:YESTERDAY$">
+				<Label>WeatherCat tag:</Label>
+			</Field>
+			<Field id="tagNote" type="label" fontSize="small" fontColor="darkgray">
+				<Label>Any tag WeatherCat's RCP accepts, e.g. STAT$RAIN:TOTAL:THISMONTH$, CF$ or SUNSETLOCAL1$. Tags are case sensitive and end in $.</Label>
+			</Field>
+			<Field id="variableId" type="menu">
+				<Label>Variable:</Label>
+				<List class="indigo.variables"/>
+			</Field>
+		</ConfigUI>
+	</Action>
+</Actions>

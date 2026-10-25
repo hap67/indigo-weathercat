@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PluginConfig>
+	<SupportURL>https://github.com/hap67/indigo-weathercat</SupportURL>
+	<Field id="intro" type="label">
+		<Label>Reads WeatherCat over its Rich Client Protocol (RCP). WeatherCat must be running; RCP is always on in WeatherCat 3.3 and later.</Label>
+	</Field>
+	<Field id="host" type="textfield" defaultValue="127.0.0.1">
+		<Label>WeatherCat address:</Label>
+	</Field>
+	<Field id="hostNote" type="label" fontSize="small" fontColor="darkgray">
+		<Label>127.0.0.1 when WeatherCat runs on the same Mac as Indigo; otherwise that Mac's IP address.</Label>
+	</Field>
+	<Field id="port" type="textfield" defaultValue="49255">
+		<Label>RCP port:</Label>
+	</Field>
+	<Field id="pollSeconds" type="textfield" defaultValue="30">
+		<Label>Read values every (seconds):</Label>
+	</Field>
+	<Field id="statsMinutes" type="textfield" defaultValue="5">
+		<Label>Read today's highs and lows every (minutes):</Label>
+	</Field>
+	<Field id="sep1" type="separator"/>
+	<Field id="showDebugInfo" type="checkbox" defaultValue="false">
+		<Label>Debug logging:</Label>
+		<Description>Log every RCP request and update</Description>
+	</Field>
+</PluginConfig>
